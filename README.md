@@ -1,31 +1,38 @@
-# MicroBit & Keyestudio Line Tracking
+# Line-Tracking Smart Car with MicroBit and Keyestudio
 
-Welcome to the MicroBit & Keyestudio Line Tracking repository! This repository serves as a comprehensive guide to mastering line tracking techniques using the BBC micro:bit and Keyestudio modules. Whether you're a beginner or an experienced enthusiast, this repository provides the tools and knowledge to delve into the fascinating world of line tracking in robotics and automation.
+**Description:**
 
-## Features:
+This repository provides guidance on creating a line-tracking smart car by integrating a line tracking sensor with a motor using the BBC micro:bit and Keyestudio components. The project aims to demonstrate the functionality of line tracking in robotics by analyzing signals from the sensor and controlling the movement of the smart car accordingly.
 
-- **Tutorials:** Dive into detailed tutorials that cover fundamental concepts of line tracking and provide step-by-step instructions on how to implement line tracking algorithms using the BBC micro:bit and Keyestudio modules.
+**Working Principle:**
 
-- **Projects:** Explore a variety of projects, ranging from basic line-following robots to advanced automation systems, with clear instructions and sample code provided for each project.
+The smart car's movements are determined by the values received from the 3-channel line tracking sensor. The following table illustrates the sensor values and corresponding actions for the micro:bit 4WD Mecanum Robot Car V2.0:
 
-- **Community:** Engage with fellow enthusiasts in our community discussions. Share your projects, ask questions, and collaborate with others to explore innovative applications of line tracking technology.
+| Left | Middle | Right | Binary Values | Decimal Value | Action           |
+|------|--------|-------|---------------|---------------|------------------|
+| LOW  | LOW    | LOW   | 000           | 0             | Stop             |
+| LOW  | LOW    | HIGH  | 001           | 1             | Turn Right       |
+| LOW  | HIGH   | LOW   | 010           | 2             | Go Forward       |
+| LOW  | HIGH   | HIGH  | 011           | 3             | Turn Right       |
+| HIGH | LOW    | LOW   | 100           | 4             | Turn Left        |
+| HIGH | LOW    | HIGH  | 101           | 5             | Go Forward       |
+| HIGH | HIGH   | LOW   | 110           | 6             | Turn Left        |
+| HIGH | HIGH   | HIGH  | 111           | 7             | Stop             |
 
-- **Resources:** Access additional learning materials, including articles, videos, and online courses, to deepen your understanding of line tracking principles and techniques.
+**Preparation:**
 
-## Getting Started:
+1. Insert the micro:bit board into the slot of the Keyestudio 4WD Mecanum Robot Car V2.0.
+2. Place batteries into the battery holder.
+3. Dial the power switch to the ON position.
+4. Connect the micro:bit to your computer via a USB cable.
+5. Open the Web version of Makecode.
+6. Import the Hex profile or add blocks step by step, including the MecanumRobot extension library.
+7. Ensure the environment is free from infrared interference, such as strong sunlight, to avoid affecting the accuracy of the 3-way tracking sensor.
 
-1. **Clone** or **download** the repository to your local machine.
-2. Explore the `Tutorials` directory to access step-by-step guides on implementing line tracking with the BBC micro:bit and Keyestudio modules.
-3. Check out the `Projects` directory to discover a variety of projects showcasing the practical applications of line tracking technology.
-4. Join the discussion in the `Community` section to connect with other enthusiasts, share your experiences, and seek assistance when needed.
-5. Dive into the `Resources` section to access additional learning materials and expand your knowledge of line tracking concepts and techniques.
+**Note:** It's crucial to avoid environments with strong sunlight as sunlight contains infrared light that can interfere with the 3-way tracking sensor's functionality.
 
-## Contributions:
+For further instructions on importing the Hex profile or adding the MecanumRobot extension library, please refer to the provided documentation or resources.
 
-We welcome contributions from the community! Whether you're fixing bugs, adding new tutorials or projects, or improving documentation, your contributions are highly appreciated. Please refer to the [Contribution Guidelines](CONTRIBUTING.md) for instructions on how to contribute to this repository.
+**Warning:** The 3-way tracking sensor should be utilized in environments without infrared interference, such as sunlight, to ensure proper functionality.
 
-## License:
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Let's explore the exciting possibilities of line tracking together with MicroBit & Keyestudio! Happy coding!
+Let's explore the exciting world of line tracking and robotics with MicroBit and Keyestudio! Happy building!
