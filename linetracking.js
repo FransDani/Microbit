@@ -30,21 +30,33 @@ function car_forward () {
   mecanumRobotV2.Motor(LR.Lower_Right, MD.Forward, 25) // left back motor or wheel move forward
 }
 
+//Create a variable for the directions
 led.enable(false)
-let ll= 0
-let rr= 0
-let cc= 0
+let ll= 0 // ll variable for left linetracking movement
+let rr= 0 // rr variable for right linetracking movement
+let cc= 0 // cc variable for center linetracking movement
 
+// Create forever function for the movement of the robot
 basic.forever(function() {
-  ll= mecanumRobotV2.LineTracking(LT.Left)
-  rr= mecanumRobotV2.LineTracking(LT.Right)
-  cc= mecanumRobotV2.LineTracking(LT.Center)
+  ll= mecanumRobotV2.LineTracking(LT.Left) // the set block in block based code with LineTracking function for the left movement
+  rr= mecanumRobotV2.LineTracking(LT.Right) // the set block in block based code with LineTracking function for the right movement
+  cc= mecanumRobotV2.LineTracking(LT.Center) // the set block in block based code with Linetracking function for the center movement
+
+  //Using if-else condition for the robot
+  /* Must remember
+  1 value detect white color
+  0 value detects black color
+  */
+  
   if (ll == 0 && (cc == 0 && rr == 0)) {
-    mecanumRobotV2.state()
+    mecanumRobotV2.state() // using 0 and state function for no movement
+    
   } else if (ll == 0 && (cc == 0 && rr == 1 )) {
-    car_right()
+    car_right() // for car right function rr is set to 1 for line sensor in moving for right side
+    
   } else if (ll == 0 && (cc == 1 && rr == 0)) {
-    car_forward()
+    car_forward() // for car center forward function cc is set to 1 for line sensor moving for center
+    
   } else if (ll == 1 && (cc == 0 && rr == 0)) {
     car_left()
   } else if (ll == 1 && (cc == 0 && rr == 1)) {
