@@ -8,6 +8,7 @@ rr variable for right linetracking movement
 ll variable for left linetracking movement
 
 """
+#You can adjust the calibration of each wheels for more accurate speed.
 # Creating a function first for the Robot movements before you use it to line tracking.
 def car_back():
     # car back function
