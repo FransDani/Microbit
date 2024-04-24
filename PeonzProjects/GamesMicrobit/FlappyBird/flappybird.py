@@ -35,3 +35,5 @@ def on_forever():
     ticks += 1
     basic.pause(1000)
 basic.forever(on_forever)
+
+#lmao got it wrong code at first so had to edit :D
