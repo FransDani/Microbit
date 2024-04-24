@@ -25,3 +25,5 @@ def on_forever():
     else:
         basic.show_arrow(ArrowNames.NORTH)
 basic.forever(on_forever)
+
+# Should shown the images of every arrow.
